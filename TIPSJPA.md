@@ -1,4 +1,6 @@
-
+https://www.jhipster.tech/jhipster-uml/
+http://www.umldesigner.org/tutorials/tuto-getting-started.html
+https://docs.oracle.com/cd/B28359_01/server.111/b28328/diagrams.htm#G5482
 
 ##  Inheritance Mapping
 How do you organize a hierarchical model into a flat relational one? JPA has three different strategies you can
