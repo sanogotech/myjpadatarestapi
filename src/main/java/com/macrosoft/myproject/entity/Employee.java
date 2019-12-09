@@ -40,13 +40,20 @@ public class Employee {
 	private LocalDate hireDate;
 	
 	
-	@ManyToOne(cascade={CascadeType.ALL})
-	@JoinColumn(name="manager_id")
-	private Employee manager;
+	  @ManyToOne(cascade={CascadeType.ALL})
+	  @JoinColumn(name="manager_id")
+	  private Employee manager;
+	 
 	//`manager_id` BIGINT(20) NULL DEFAULT NULL
+	//@ManyToOne
+	//+s employee --- 0 or 1 Manager
 	
-	@OneToMany(mappedBy="manager")
-	private Set<Employee> subordinates = new HashSet<Employee>();
+	
+	  @OneToMany(mappedBy="manager")
+	  private Set<Employee> subordinates;
+	  //private Set<Employee> subordinates = new HashSet<Employee>();
+	  
+	 
 	
 	/*
 	@Column(name = "local_time", columnDefinition = "TIME")
@@ -68,21 +75,14 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss a
 String time1 = "2019-03-27 10:15:30 AM";
 LocalDateTime localTimeObj1 = LocalDateTime.parse(time1, formatter);
 
-	*/
 	
-	/**
-	/**
-	 * Description of the property employees.
-	 */
-	@ManyToOne
-	//+s employee --- 0 or 1 Manager
-	public Employee employees = null;
+	
 
 	/**
 	 * Description of the property jobs.
 	 */
 	@OneToMany
-	public HashSet<Job> jobs = new HashSet<Job>();
+	public Set<Job> jobs;
 
 
 
@@ -93,27 +93,13 @@ LocalDateTime localTimeObj1 = LocalDateTime.parse(time1, formatter);
 		super();
 	}
 
-	/**
-	 * Returns employees.
-	 * @return employees 
-	 */
-	public Employee getEmployees() {
-		return this.employees;
-	}
 
-	/**
-	 * Sets a value to attribute employees. 
-	 * @param newEmployees 
-	 */
-	public void setEmployees(Employee newEmployees) {
-		this.employees = newEmployees;
-	}
 
 	/**
 	 * Returns jobs.
 	 * @return jobs 
 	 */
-	public HashSet<Job> getJobs() {
+	public Set<Job> getJobs() {
 		return this.jobs;
 	}
 
@@ -165,23 +151,27 @@ LocalDateTime localTimeObj1 = LocalDateTime.parse(time1, formatter);
 		this.hireDate = hireDate;
 	}
 
-	public Employee getManager() {
-		return manager;
-	}
+	
+	  public Employee getManager() {
+		  return manager; 
+	  }
+	  
+	  public void setManager(Employee manager) { 
+		  this.manager = manager;
+	  }
+	 
 
-	public void setManager(Employee manager) {
-		this.manager = manager;
-	}
+	
+	  public Set<Employee> getSubordinates() { 
+		  return subordinates; 
+	  }
+	  
+	  public void setSubordinates(Set<Employee> subordinates) { 
+		  this.subordinates = subordinates; 
+	 }
+	 
 
-	public Set<Employee> getSubordinates() {
-		return subordinates;
-	}
-
-	public void setSubordinates(Set<Employee> subordinates) {
-		this.subordinates = subordinates;
-	}
-
-	public void setJobs(HashSet<Job> jobs) {
+	public void setJobs(Set<Job> jobs) {
 		this.jobs = jobs;
 	}
 	

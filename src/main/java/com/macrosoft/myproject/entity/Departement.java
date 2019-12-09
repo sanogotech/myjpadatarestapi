@@ -1,10 +1,11 @@
 package com.macrosoft.myproject.entity;
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -35,8 +36,8 @@ public class Departement {
 	/**
 	 * Description of the property employees.
 	 */
-    @OneToMany
-	public HashSet<Employee> employees = new HashSet<Employee>();
+    @OneToMany(fetch = FetchType.LAZY)
+	public Set<Employee> employees ;
 	//I use:
 	//Set: when the items in the collections have no order and are unique
     //List: when the items has a order
@@ -49,13 +50,54 @@ public class Departement {
 	}
 
 
-	/**
-	 * Returns employees.
-	 * @return employees 
-	 */
-	public HashSet<Employee> getEmployees() {
-		return this.employees;
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public Set<Employee> getEmployees() {
+		return employees;
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setEmployees(Set<Employee> employees) {
+		this.employees = employees;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	public Location getLocation() {
 		return location;

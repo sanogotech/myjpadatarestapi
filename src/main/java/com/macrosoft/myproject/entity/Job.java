@@ -1,5 +1,6 @@
 package com.macrosoft.myproject.entity;
 import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,7 +33,7 @@ public class Job {
 	 * Description of the property tasks.
 	 */
 	@ManyToMany
-	public HashSet<Task> tasks = new HashSet<Task>();
+	public Set<Task> tasks;
 
 
 	/**
@@ -47,7 +48,7 @@ public class Job {
 	 * Returns tasks.
 	 * @return tasks 
 	 */
-	public HashSet<Task> getTasks() {
+	public Set<Task> getTasks() {
 		return this.tasks;
 	}
 
@@ -82,7 +83,7 @@ public class Job {
 	}
 
 
-	public void setTasks(HashSet<Task> tasks) {
+	public void setTasks(Set<Task> tasks) {
 		this.tasks = tasks;
 	}
 	
