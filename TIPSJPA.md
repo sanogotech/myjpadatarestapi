@@ -2,6 +2,9 @@ https://www.jhipster.tech/jhipster-uml/
 http://www.umldesigner.org/tutorials/tuto-getting-started.html
 https://docs.oracle.com/cd/B28359_01/server.111/b28328/diagrams.htm#G5482
 
+*** UML to JAVA  Generator 3.0  /Acceleo / Obeo  Plugin to  UML Designer
+** Eclipse : Obeo  Designer  Community  UML Editor
+
 ##  Inheritance Mapping
 How do you organize a hierarchical model into a flat relational one? JPA has three different strategies you can
 choose from.
