@@ -3,7 +3,7 @@ package com.macrosoft.myproject.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
+import  org.springframework.data.rest.core.annotation.RestResource;
 
 
 /**
@@ -12,6 +12,7 @@ import javax.persistence.Id;
  * @author User
  */
 @Entity
+//@RestResource
 public class Region {
 	
 	
